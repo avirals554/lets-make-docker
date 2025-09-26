@@ -11,3 +11,9 @@ RUN apt install -y    cgroup-tools
 RUN apt install -y    util-linux
 RUN apt install -y   coreutils
 RUN apt install -y     vim
+RUN mkdir -p /var/bocker
+
+# COPY file_mount.sh  /file_mount.sh
+# RUN chmod +x /file_mount.sh
+
+# ENTRYPOINT [ "/file_mount.sh" ]

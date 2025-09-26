@@ -1,0 +1,39 @@
+btrfs (b tree file system )
+to under stand this there are a few stuff that you need to get first ( they are not hard )
+what is a file system?
+what are the different types of file system ?
+why brtfs ?
+
+
+  the answer are gonna be the most simple that i can make you under stand (my future self )
+
+answer 1 && 2
+what is a file system? and why do we need to understand them ? file system is basically "how " the os looks at file i know this might sound vague but that is probbly the best dexcription that works for me
+there are several types of file systems namely -
+ntfs file system (" for windows ")
+dxt4 file system ("commonn in most linux distros ")
+and btrfs ("a mordern version of the dxt4") and what we are gonna use in this to make this project
+answer 3
+what are some of the different advantages of the btrfs lets take a look -
+snapshot feature -"think of it as like a git way of taking a snapshot of the file and then using it"
+copy before write -" only monitors the changes in a file and then maps accirdingly "
+creating sub volumes "ALWAYS REMEMBER THE REASON THEY ARE DIFFERENT FROM LIKE MKDIR IS BECAUSE WE CANNOT DO THE PREVIOUS STUFF ON A DIRECTORY THAT IS WHY WE NEED IT "
+
+
+
+some of the common things to play with in btfs --
+sudo btrfs filesystem df /var/bocker --
+  checking the amount of space that is used and all the general data about the stuff { remember that i have done this in a /var folder that deals with constant cahnges stuff  and i have made this inside a docker
+sudo btrfs subvolume snapshot /var/bocker/test /var/bocker/test_backup  ---
+this is an example of how to take a snapshot of that file and store it
+
+
+
+also you would need to mount it on the a file named /var/bocker we are doing this for stroing info about the images that we are gonna pull like /var/bocker/image
+
+
+do these steps first
+ mkfs.btrfs -f /dev/nvme0n1p4
+sudo mkdir -p /var/bocker
+sudo mount -t btrfs /dev/nvme0n1p4 /var/bocker
+mount | grep /var/bocker
