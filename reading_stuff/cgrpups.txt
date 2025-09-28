@@ -1,0 +1,6 @@
+what are cgroups ?
+basically they are used to limit something usually a process or a group of processes in a linux kernal
+ installation
+ apt install cgroup-tools
+cgcreate, cgset, cgexec, cgdelete from that cgroup-tools thing
+these are gonna be used to set the limit to various stuff
